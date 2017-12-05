@@ -27,9 +27,7 @@ INSERT INTO Darius.dbo.p003_Class (  -- описание класса
 
     id,                            
     name,                      
-    description,             
-    main_characteristics,                                             
-    general_skills,            
+    description,                         
     charm_id,                        
     bonus_id                         
 )
@@ -47,12 +45,29 @@ VALUES (
 
 ________________________
 
-SELECT * FROM Darius.dbo.p003_Class
-SELECT * FROM Darius.dbo.p003_Race
 
 
+SELECT * FROM Darius.dbo.p003_Skills
 
+INSERT INTO Darius.dbo.p003_Skills (    -- описание навыков
+   
+   id,                             -- айди навыка
+   name,                           -- название навыка
+   type,                           -- тип скилла: магический, боевой или воровской
+   description ,                   -- описание навыка
+   defining_parameter              -- определяющий парметр 
+)
+VALUES (
+1,
+'Защита/Блок',
+'Боевой',
+'Навык «Защита» позволяет владеющему им
+ использовать в рукопашном бою щиты, 
+ чтобы блокировать любые атаки в ближнем бою.
+ В случае успешной блокировки щит принимает на себя весь ущерб.',
+'Ловкость'
 
+)
 
 
 
