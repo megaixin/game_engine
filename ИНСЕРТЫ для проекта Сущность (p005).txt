@@ -103,7 +103,52 @@ VALUES(
 )
 
 
+_____________________________________________
+INSERT INTO Darius.dbo.p005_CreatureState (    -- описание состояния существа
 
+    id BIGINT PRIMARY KEY                             -- айди
+    level BIGINT NOT NULL,                            -- уровень существа
+    position_x BIGINT NOT NULL,                       -- позиция х					
+    position_y BIGINT NOT NULL,                       -- позиция y
+    resurrection_time DATETIME NOT NULL               -- дата воскрешения
+
+    actual_life BIGINT NOT NULL,                      -- текущее к-во жизни
+    max_life BIGINT NOT NULL,                         -- максимальная жизнь
+    actual_mana BIGINT NOT NULL,                      -- текущее к-во маны  
+    max_mana BIGINT NOT NULL,                         -- максимальная мана
+    actual_endurance BIGINT NOT NULL,                 -- текущее состояние выносливости
+    max_endurance BIGINT NOT NULL,                    -- максимальная выносливость
+    actual_capacity BIGINT NOT NULL,                  -- текущая вместимость инвентаря 
+    max_capacity BIGINT NOT NULL,                     -- максимальная вместимость инвентаря
+  
+    strength BIGINT NOT NULL,                         -- сила
+    intelligence BIGINT NOT NULL,                     -- интеллект
+    agility BIGINT NOT NULL,                          -- ловкость
+    luck BIGINT NOT NULL,                             -- удача
+    
+    long_swords NUMERIC(18,8) NOT NULL,               -- дл. клинки
+    destroying NUMERIC(18,8) NOT NULL,                -- разрушение
+    short_blades NUMERIC(18,8) NOT NULL,              -- коротк.клинки
+    heavy_armor NUMERIC(18,8) NOT NULL,               -- тяж. доспехи
+    medium_armor NUMERIC(18,8) NOT NULL,              -- средн. доспехи 
+    light_armor NUMERIC(18,8) NOT NULL,               -- легк. доспехи
+    alteration NUMERIC(18,8) NOT NULL,                -- изменение
+    blunt NUMERIC(18,8) NOT NULL,                     -- дробящее оружие
+    conjuration NUMERIC(18,8) NOT NULL,               -- колдовство
+    restoration NUMERIC(18,8) NOT NULL                -- восстановление 
+)
+VALUES (
+
+1,
+1,
+15,
+30,
+NULL
+
+
+
+
+)
 
 
 
