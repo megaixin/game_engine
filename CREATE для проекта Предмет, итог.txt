@@ -1,0 +1,100 @@
+CREATE TABLE Magnus.dbo.Item_Item (
+
+    id BIGINT PRIMARY KEY,                       -- ай ди вещи
+    name VARCHAR (400) UNIQUE NOT NULL,          -- имя вещи 
+    type VARCHAR (100) NOT NULL,                 -- тип вещи, оружие, броня и так далее
+    weight NUMERIC (18,2) NOT NULL,              -- вес вещи в условн. единицах
+    price BIGINT NOT NULL,                       -- цена вещи
+    charm_id BIGINT NOT NULL,                    -- айди зачарования
+    item_id BIGINT NOT NULL,                     -- айди брони
+    image_id BIGINT NOT NULL,                    -- айди картинки
+    set_id BIGINT NOT NULL,                      -- айди набора
+    help_string VARCHAR (MAX)                    -- комментарий разработчика
+)
+
+CREATE TABLE Magnus.dbo.Item_Armor (  
+    
+    id BIGINT PRIMARY KEY,                       -- айди брони
+    type VARCHAR(400) NOT NULL,                  -- тип брони легкая, тяжелая или средняя
+    body_part VARCHAR(400) NOT NULL,             -- часть брони наручи, поножжи. кираса, и так далее
+    material VARCHAR(150) NOT NULL,              -- материал брони
+    durability BIGINT NOT NULL,                  -- прочность брони к-во самых легких ударов которые может выдержать броня 
+    defense BIGINT NOT NULL,                     -- физическая защита брони
+    set_id INT NOT NULL                          -- айди комплекта, если нет комплекта - то ай ди равен 0
+)
+
+CREATE TABLE Magnus.dbo.Item_Set  (                         
+
+    id BIGINT PRIMARY KEY,                       -- айди комплекта
+    name VARCHAR (400) UNIQUE NOT NULL,          -- имя комплекта например Хитиновая броня
+    set_count INT NOT NULL,                      -- к-во вещей для комплекта
+    charm_id BIGINT NOT NULL,                    -- айди зачарования
+    description VARCHAR(MAX) NOT NULL            -- описание комплекта
+)
+
+CREATE TABLE Magnus.dbo.Item_Enchantment (
+
+   id BIGINT PRIMARY KEY,                         -- айди зачарования
+   name VARCHAR (300) UNIQUE NOT NULL,            -- название зачарования
+   price BIGINT NOT NULL,                         -- цена зачарования
+   price_type BIGINT NOT NULL,                    -- тип цены зачарования
+   help_string VARCHAR (MAX)                      -- вспомагательная строка
+)
+
+CREATE TABLE Magnus.dbo.Item_Effect(   -- описание сущности "эффект заклинания"
+
+    id BIGINT PRIMARY KEY,
+    type VARCHAR (300) NOT NULL,                  -- тип эффекта, к примеру: штраф, проклятие, заклинание, врожденный дар и т.д.
+    target VARCHAR (400) NOT NULL,                -- цель - то есть как заклинание применяется: варианты: на себя, касание, аура,направление, метание
+    kind_effect VARCHAR (500) NOT NULL,           -- вид влияния: понижение инициативы, ослабление, удар огнем и т.д
+    school VARCHAR (400) NOT NULL,                -- школа магии или умение к которой относится магический эффект и будет расти при его использовании
+    time BIGINT NOT NULL,                         -- длительность эффекта, если -1 то постоянный, длительность в секундах
+    power BIGINT NOT NULL,                        -- сила эффекта: сопротивение магии 20%, удар магии на 50 и т.д    
+    length BIGINT,                                -- макс. расстояние которого достигает эффект заклинания.
+    radius BIGINT,                                -- радиус заклинания типа огненного шара
+    angle INT                                     -- угол поражения заклинаний типа "конус холода"
+)
+
+CREATE TABLE Magnus.dbo.Item_DictCharmEffect (  -- связь один ко многим между зачарованием и его эффектами
+     
+    charm_id BIGINT NOT NULL,                     -- айди зачарования
+    effect_id BIGINT NOT NULL                     -- айди эффекта
+)
+
+CREATE TABLE Magnus.dbo.Item_ImageItem(
+
+    id BIGINT PRIMARY KEY,                        -- айди
+    path VARCHAR(600)NOT NULL                     -- путь
+)
+
+CREATE TABLE Magnus.dbo.Item_Weapon (
+
+    id BIGINT PRIMARY KEY,                       -- ай ди оружия
+    type VARCHAR (400) NOT NULL,                 -- тип оружия, к примеру двуручный меч
+    material VARCHAR (200) NOT NULL,             -- материал
+    durability BIGINT NOT NULL,                  -- прочность, к-во ударов которое может выдержать оружие
+    min_damage BIGINT NOT NULL,                  -- минимальный урон
+    max_damage BIGINT NOT NULL,                  -- максимальный урон
+)
+
+CREATE TABLE Magnus.dbo.Item_Clothes(   
+
+    id BIGINT PRIMARY KEY,                       -- айди бижутерии
+    type VARCHAR (400) NOT NULL,                 -- тип бижутерии, к примеру: амулет, рубашка
+    material VARCHAR (200) NOT NULL,             -- материал бижутерии
+    help_string VARCHAR(MAX)                     -- вспомогательная строка
+)
+
+CREATE TABLE Magnus.dbo.Item_AlchemyProperty(   
+
+    id BIGINT PRIMARY KEY,                        -- айди
+    type VARCHAR (400) NOT NULL,                  -- тип эффекта, типа Восстановление жизни или Увеличение скорости атаки
+    coeff NUMERIC (18,2) NOT NULL,                -- коэффициент эффекта, например, 0.5 или 2.0. То есть, зелье из бриллианта будет круче, чем зелье из травки-задристанки. 
+    help_string VARCHAR(MAX)                      -- примечание
+)
+
+CREATE TABLE Magnus.dbo.Item_DictItemAlchemy( 
+
+    item_id BIGINT NOT NULL,                     -- айди вещи
+    alchem_id BIGINT NOT NULL                    -- айди алхимического эффекта
+)
