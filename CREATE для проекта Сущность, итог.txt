@@ -1,0 +1,105 @@
+CREATE TABLE Magnus.dbo.Creature_Creature (    -- описание существа на карте
+
+    id BIGINT PRIMARY KEY,                           -- айди существа 
+    owner_id BIGINT NOT NULL,                        -- айди владельца ( -1- агрессивный моб, -2 - не агрессивный моб)
+    name VARCHAR (100) NOT NULL,                     -- имя существа
+    state_id BIGINT NOT NULL,                        -- айди состояния существа
+    race_id INT NOT NULL,                            -- айди расы (если его нет то -1)
+    class_id INT NOT NULL,                           -- айди класса (если его нет то -1)
+    zodiak_id VARCHAR (200) NOT NULL                 -- айди знака зодиака (если его нет то -1)
+)
+
+CREATE TABLE Magnus.dbo.Creature_CreatureState (    -- описание состояния существа
+
+    id BIGINT PRIMARY KEY,                            -- айди
+    level BIGINT NOT NULL,                            -- уровень существа
+    position_x BIGINT NOT NULL,                       -- позиция х					
+    resurrection_time DATETIME,                       -- дата воскрешения
+
+    actual_life BIGINT NOT NULL,                      -- текущее к-во жизни
+    max_life BIGINT NOT NULL,                         -- максимальная жизнь
+    actual_mana BIGINT NOT NULL,                      -- текущее к-во маны  
+    max_mana BIGINT NOT NULL,                         -- максимальная мана
+    actual_endurance BIGINT NOT NULL,                 -- текущее состояние выносливости
+    max_endurance BIGINT NOT NULL,                    -- максимальная выносливость
+    actual_capacity BIGINT NOT NULL,                  -- текущая вместимость инвентаря 
+    max_capacity BIGINT NOT NULL,                     -- максимальная вместимость инвентаря
+  
+    strength BIGINT NOT NULL,                         -- сила
+    intelligence BIGINT NOT NULL,                     -- интеллект
+    agility BIGINT NOT NULL,                          -- ловкость
+    luck BIGINT NOT NULL,                             -- удача
+    
+    long_swords NUMERIC(18,8) NOT NULL,               -- дл. клинки
+    destroying NUMERIC(18,8) NOT NULL,                -- разрушение
+    short_blades NUMERIC(18,8) NOT NULL,              -- коротк.клинки
+    heavy_armor NUMERIC(18,8) NOT NULL,               -- тяж. доспехи
+    medium_armor NUMERIC(18,8) NOT NULL,              -- средн. доспехи 
+    light_armor NUMERIC(18,8) NOT NULL,               -- легк. доспехи
+    alteration NUMERIC(18,8) NOT NULL,                -- изменение
+    blunt NUMERIC(18,8) NOT NULL,                     -- дробящее оружие
+    conjuration NUMERIC(18,8) NOT NULL,               -- колдовство
+    restoration NUMERIC(18,8) NOT NULL                -- восстановление 
+)
+
+CREATE TABLE Magnus.dbo.Creature_Race ( -- описание расы
+
+    id BIGINT PRIMARY KEY,                            -- айди расы
+    name VARCHAR (250) NOT NULL,                      -- название расы, к примеру Редгард, Бретон
+    description VARCHAR (5000) NOT NULL,              -- описание расы                          
+    charm_id BIGINT NOT NULL                          -- айди зачарований 
+)
+
+CREATE TABLE Magnus.dbo.Creature_Class (  -- описание класса
+
+    id BIGINT PRIMARY KEY,                            -- айди класса
+    is_avaliable VARCHAR(20) NOT NULL,                -- доступен ли класс для игры
+    name VARCHAR (250) NOT NULL,                      -- название класса, к примеру Маг, Лучник
+    description VARCHAR (5000) NOT NULL,              -- описание класса
+    charm_id BIGINT NOT NULL,                         -- айди зачарований 
+    help_srting_name VARCHAR (MAX)                    -- вспомагательная строка                      
+)
+
+CREATE TABLE Magnus.dbo.Creature_Zodiak (  -- описание зодиака
+     
+    id BIGINT PRIMARY KEY,                            -- айди зодиака
+    name VARCHAR (200) NOT NULL,                      -- название зодиака
+    description VARCHAR (5000) NOT NULL,              -- описание зодиака 
+    charm_id BIGINT NOT NULL                          -- айди зачарований (привяжем зачарование "Возничий", зачарование "Боевой раж" и т.д.) 
+)
+
+
+CREATE TABLE Magnus.dbo.Creature_Inventory (   -- описание инвентаря 
+    
+    creature_id BIGINT NOT NULL,                     -- айди того у кого инвентарь
+    item_id BIGINT NOT NULL,                         -- айди вещи входящей в инвентарь
+    equipped VARCHAR (300) NOT NULL,                 -- экипирован оружием и куда 
+    durability NUMERIC(22,9) NOT NULL,               -- процентная текущая прочность вещи из инвентаря
+    level_set_id BIGINT NOT NULL,                    -- уровневый набор
+    count BIGINT NOT NULL                            -- к-во вещей 
+)
+
+CREATE TABLE Magnus.dbo.Creature_LeveledItemSet (  -- описание уровневого набора
+
+    id BIGINT NOT NULL,                              -- айди набора
+    first_level BIGINT NOT NULL,                     -- начальный уровень
+    final_level BIGINT NOT NULL,                     -- итоговый уровень
+    id_item BIGINT NOT NULL                          -- айди инвентаря, вещь из инвентаря
+)
+
+CREATE TABLE Magnus.dbo.Creature_StatesAndPerksBonus (    -- описание статов и перков
+
+    race_or_class_id BIGINT NOT NULL,                -- айди бонуса
+    state_or_perk_id BIGINT NOT NULL,                -- айди стата или перка
+    bonus BIGINT NOT NULL                            -- бонус
+)
+
+CREATE TABLE Magnus.dbo.Creature_Map ( -- описание карты
+
+  point BIGINT NOT NULL,                             -- точка
+  change_type VARCHAR (500) NOT NULL,                -- местность, поворот или встреча с отрядом
+  change_param VARCHAR (500) NOT NULL,               -- конкретная местность, направление поворота и что за отрял
+  help_string VARCHAR (MAX)                          -- вспомагательная строка
+)
+
+
