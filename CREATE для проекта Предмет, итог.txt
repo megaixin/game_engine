@@ -1,4 +1,4 @@
-CREATE TABLE Magnus.dbo.Item_Item (
+CREATE TABLE Magnus.dbo.Item_Item (  -- заполнено
 
     id BIGINT PRIMARY KEY,                       -- ай ди вещи
     name VARCHAR (400) UNIQUE NOT NULL,          -- имя вещи 
@@ -12,7 +12,7 @@ CREATE TABLE Magnus.dbo.Item_Item (
     help_string VARCHAR (MAX)                    -- комментарий разработчика
 )
 
-CREATE TABLE Magnus.dbo.Item_Armor (  
+CREATE TABLE Magnus.dbo.Item_Armor (  -- заполнено
     
     id BIGINT PRIMARY KEY,                       -- айди брони
     type VARCHAR(400) NOT NULL,                  -- тип брони легкая, тяжелая или средняя
@@ -23,7 +23,7 @@ CREATE TABLE Magnus.dbo.Item_Armor (
     set_id INT NOT NULL                          -- айди комплекта, если нет комплекта - то ай ди равен 0
 )
 
-CREATE TABLE Magnus.dbo.Item_Set  (                         
+CREATE TABLE Magnus.dbo.Item_Set  (   -- заполнено                       
 
     id BIGINT PRIMARY KEY,                       -- айди комплекта
     name VARCHAR (400) UNIQUE NOT NULL,          -- имя комплекта например Хитиновая броня
@@ -41,7 +41,7 @@ CREATE TABLE Magnus.dbo.Item_Enchantment (
    help_string VARCHAR (MAX)                      -- вспомагательная строка
 )
 
-CREATE TABLE Magnus.dbo.Item_Effect(   -- описание сущности "эффект заклинания"
+CREATE TABLE Magnus.dbo.Item_Effect(  -- заполнено
 
     id BIGINT PRIMARY KEY,
     type VARCHAR (300) NOT NULL,                  -- тип эффекта, к примеру: штраф, проклятие, заклинание, врожденный дар и т.д.
@@ -61,13 +61,13 @@ CREATE TABLE Magnus.dbo.Item_DictCharmEffect (  -- связь один ко многим между за
     effect_id BIGINT NOT NULL                     -- айди эффекта
 )
 
-CREATE TABLE Magnus.dbo.Item_ImageItem(
+CREATE TABLE Magnus.dbo.Item_ImageItem(  -- в заполнении пока не нуждается
 
     id BIGINT PRIMARY KEY,                        -- айди
     path VARCHAR(600)NOT NULL                     -- путь
 )
 
-CREATE TABLE Magnus.dbo.Item_Weapon (
+CREATE TABLE Magnus.dbo.Item_Weapon (    -- заполнено
 
     id BIGINT PRIMARY KEY,                       -- ай ди оружия
     type VARCHAR (400) NOT NULL,                 -- тип оружия, к примеру двуручный меч

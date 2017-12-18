@@ -1,0 +1,112 @@
+INSERT INTO Magnus.dbo.Item_Weapon (
+
+    id,                       
+    type VARCHAR,                 
+    material,             
+    durability,                 
+    min_damage,                  
+    max_damage                 
+)
+VALUES (
+   1,                         -- ай ди оружия
+   'Топор',                   -- тип оружия, к примеру двуручный меч
+   'Хитин',                   -- материал
+   640,                       -- прочность, к-во ударов которое может выдержать оружие
+   1,                         -- минимальный урон
+   11                         -- максимальный урон
+)
+
+
+
+INSERT INTO Magnus.dbo.Item_Armor (
+
+  
+    id BIGINT PRIMARY KEY,                       
+    type VARCHAR(400) NOT NULL,                  
+    body_part VARCHAR(400) NOT NULL,             
+    material VARCHAR(150) NOT NULL,              
+    durability BIGINT NOT NULL,                   
+    defense BIGINT NOT NULL,                     
+    set_id INT NOT NULL                          
+)
+VALUES (
+   1,                              
+   'Легкая броня',                 -- айди брони
+   'Кираса',                       -- тип брони легкая, тяжелая или средняя
+   'Хитин',                        -- часть брони наручи, поножжи. кираса, и так далее
+   300,                            -- материал брони
+   10,                             -- прочность брони к-во самых легких ударов которые может выдержать броня  
+   1                               -- айди комплекта, если нет комплекта - то ай ди равен 0
+
+)
+
+
+INSERT INTO Magnus.dbo.Item_Item (
+    id,                  
+    name,                
+    type,                
+    weight,              
+    price,                
+    charm_id,               
+    item_id,                 
+    image_id,                
+    set_id,                
+    help_string              
+)
+VALUES(
+    1,                             -- ай ди вещи
+    'Хитиновая кираса',                       -- имя вещи 
+    'Броня',                   -- тип вещи, оружие, броня и так далее
+    6.00,                            -- вес вещи в условн. единицах
+    45,                              -- цена вещи
+    -1,                              -- айди зачарования
+    1,                              -- айди брони
+    -1,                              -- айди картинки
+    1,                              -- айди набора
+    NULL                            -- комментарий разработчика
+)
+
+
+INSERT INTO Magnus.dbo.Item_Set(
+   
+    id,                           -- айди комплекта
+    name,                         -- имя комплекта например Хитиновая броня
+    set_count,                    -- к-во вещей для комплекта
+    charm_id,                     -- айди зачарования
+    description                   -- описание комплекта   
+)
+
+VALUES(
+
+    2,
+    'Железная броня',
+    7,
+    1,
+   'Бонус дается за полный железный доспех'
+)
+
+
+INSERT INTO Magnus.dbo.Item_Effect (
+    id,
+    type,
+    target,
+    kind_effect,
+    school,
+    time,
+    power,
+    length,
+    radius,
+    angle
+)
+VALUES (
+    1,
+    'Зачарование',
+    'На себя',
+    'Увеличение атаки',
+    'Восстановление',
+    -1,
+    10,
+    0,
+    0,
+    0
+)
