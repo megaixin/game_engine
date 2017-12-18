@@ -110,3 +110,62 @@ VALUES (
     0,
     0
 )
+
+
+INSERT INTO Magnus.dbo.Item_DictCharmEffect  (
+    charm_id,
+    effect_id
+)
+VALUES(
+
+6,
+6
+)
+
+
+INSERT INTO Magnus.dbo.Item_AlchemyProperty(
+
+     id,                            -- айди
+     type,                          -- тип эффекта, типа Восстановление жизни или Увеличение скорости атаки
+     coeff,                         -- коэффициент эффекта, например, 0.5 или 2.0. То есть, зелье из бриллианта будет круче, чем зелье из травки-задристанки. 
+     help_string                    -- примечание
+)
+
+VALUES(
+
+    5,
+    'Уменьшить запас сил',
+    5.0,
+    NULL
+)
+
+
+
+INSERT INTO Magnus.dbo.Item_Enchantment (
+    id,
+    name,
+    price,
+    price_type,
+    help_string
+)
+VALUES(
+
+6,
+'Кара архидракона',
+0,
+-1,
+NULL
+
+)
+
+
+INSERT INTO Magnus.dbo.Item_DictItemAlchemy( 
+
+    item_id,                     
+    alchem_id                    
+)
+
+VALUES(
+26,                 -- айди вещи
+1                   -- айди алхимического эффекта
+)

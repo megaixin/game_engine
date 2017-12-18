@@ -1,4 +1,4 @@
-CREATE TABLE Magnus.dbo.Item_Item (  -- заполнено
+CREATE TABLE Magnus.dbo.Item_Item (    -- заполнено
 
     id BIGINT PRIMARY KEY,                       -- ай ди вещи
     name VARCHAR (400) UNIQUE NOT NULL,          -- имя вещи 
@@ -12,7 +12,7 @@ CREATE TABLE Magnus.dbo.Item_Item (  -- заполнено
     help_string VARCHAR (MAX)                    -- комментарий разработчика
 )
 
-CREATE TABLE Magnus.dbo.Item_Armor (  -- заполнено
+CREATE TABLE Magnus.dbo.Item_Armor (    -- заполнено
     
     id BIGINT PRIMARY KEY,                       -- айди брони
     type VARCHAR(400) NOT NULL,                  -- тип брони легкая, тяжелая или средняя
@@ -23,8 +23,8 @@ CREATE TABLE Magnus.dbo.Item_Armor (  -- заполнено
     set_id INT NOT NULL                          -- айди комплекта, если нет комплекта - то ай ди равен 0
 )
 
-CREATE TABLE Magnus.dbo.Item_Set  (   -- заполнено                       
-
+CREATE TABLE Magnus.dbo.Item_Set  (     -- заполнено                       
+ 
     id BIGINT PRIMARY KEY,                       -- айди комплекта
     name VARCHAR (400) UNIQUE NOT NULL,          -- имя комплекта например Хитиновая броня
     set_count INT NOT NULL,                      -- к-во вещей для комплекта
@@ -32,7 +32,7 @@ CREATE TABLE Magnus.dbo.Item_Set  (   -- заполнено
     description VARCHAR(MAX) NOT NULL            -- описание комплекта
 )
 
-CREATE TABLE Magnus.dbo.Item_Enchantment (
+CREATE TABLE Magnus.dbo.Item_Enchantment ( -- заполнено
 
    id BIGINT PRIMARY KEY,                         -- айди зачарования
    name VARCHAR (300) UNIQUE NOT NULL,            -- название зачарования
@@ -41,7 +41,7 @@ CREATE TABLE Magnus.dbo.Item_Enchantment (
    help_string VARCHAR (MAX)                      -- вспомагательная строка
 )
 
-CREATE TABLE Magnus.dbo.Item_Effect(  -- заполнено
+CREATE TABLE Magnus.dbo.Item_Effect(      -- заполнено
 
     id BIGINT PRIMARY KEY,
     type VARCHAR (300) NOT NULL,                  -- тип эффекта, к примеру: штраф, проклятие, заклинание, врожденный дар и т.д.
@@ -55,7 +55,7 @@ CREATE TABLE Magnus.dbo.Item_Effect(  -- заполнено
     angle INT                                     -- угол поражения заклинаний типа "конус холода"
 )
 
-CREATE TABLE Magnus.dbo.Item_DictCharmEffect (  -- связь один ко многим между зачарованием и его эффектами
+CREATE TABLE Magnus.dbo.Item_DictCharmEffect (   -- заполнено
      
     charm_id BIGINT NOT NULL,                     -- айди зачарования
     effect_id BIGINT NOT NULL                     -- айди эффекта
@@ -85,7 +85,7 @@ CREATE TABLE Magnus.dbo.Item_Clothes(
     help_string VARCHAR(MAX)                     -- вспомогательная строка
 )
 
-CREATE TABLE Magnus.dbo.Item_AlchemyProperty(   
+CREATE TABLE Magnus.dbo.Item_AlchemyProperty(   -- заполнено
 
     id BIGINT PRIMARY KEY,                        -- айди
     type VARCHAR (400) NOT NULL,                  -- тип эффекта, типа Восстановление жизни или Увеличение скорости атаки
@@ -93,7 +93,7 @@ CREATE TABLE Magnus.dbo.Item_AlchemyProperty(
     help_string VARCHAR(MAX)                      -- примечание
 )
 
-CREATE TABLE Magnus.dbo.Item_DictItemAlchemy( 
+CREATE TABLE Magnus.dbo.Item_DictItemAlchemy(  -- заполнено
 
     item_id BIGINT NOT NULL,                     -- айди вещи
     alchem_id BIGINT NOT NULL                    -- айди алхимического эффекта
