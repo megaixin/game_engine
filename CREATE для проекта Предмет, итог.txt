@@ -77,7 +77,7 @@ CREATE TABLE Magnus.dbo.Item_Weapon (    -- заполнено
     max_damage BIGINT NOT NULL,                  -- максимальный урон
 )
 
-CREATE TABLE Magnus.dbo.Item_Clothes(   
+CREATE TABLE Magnus.dbo.Item_Clothes(   --заполнено
 
     id BIGINT PRIMARY KEY,                       -- айди бижутерии
     type VARCHAR (400) NOT NULL,                 -- тип бижутерии, к примеру: амулет, рубашка

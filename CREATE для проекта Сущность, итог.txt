@@ -42,7 +42,7 @@ CREATE TABLE Magnus.dbo.Creature_CreatureState (    -- описание состояния сущест
     restoration NUMERIC(18,8) NOT NULL                -- восстановление 
 )
 
-CREATE TABLE Magnus.dbo.Creature_Race ( -- описание расы
+CREATE TABLE Magnus.dbo.Creature_Race ( -- описание расы     -- заполнено
 
     id BIGINT PRIMARY KEY,                            -- айди расы
     name VARCHAR (250) NOT NULL,                      -- название расы, к примеру Редгард, Бретон
@@ -50,7 +50,7 @@ CREATE TABLE Magnus.dbo.Creature_Race ( -- описание расы
     charm_id BIGINT NOT NULL                          -- айди зачарований 
 )
 
-CREATE TABLE Magnus.dbo.Creature_Class (  -- описание класса
+CREATE TABLE Magnus.dbo.Creature_Class (  -- описание класса   -- заполнено
 
     id BIGINT PRIMARY KEY,                            -- айди класса
     is_avaliable VARCHAR(20) NOT NULL,                -- доступен ли класс для игры
@@ -60,7 +60,7 @@ CREATE TABLE Magnus.dbo.Creature_Class (  -- описание класса
     help_srting_name VARCHAR (MAX)                    -- вспомагательная строка                      
 )
 
-CREATE TABLE Magnus.dbo.Creature_Zodiak (  -- описание зодиака
+CREATE TABLE Magnus.dbo.Creature_Zodiak (  -- описание зодиака  --заполнено
      
     id BIGINT PRIMARY KEY,                            -- айди зодиака
     name VARCHAR (200) NOT NULL,                      -- название зодиака
