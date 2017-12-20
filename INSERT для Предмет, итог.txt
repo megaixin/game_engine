@@ -169,3 +169,17 @@ VALUES(
 26,                 -- айди вещи
 1                   -- айди алхимического эффекта
 )
+
+INSERT INTO Magnus.dbo.Item_Clothes (
+id,
+type,
+material,
+help_string
+
+)
+VALUES (
+4,
+'Простая рубашка',
+'Лен',
+NULL
+)
