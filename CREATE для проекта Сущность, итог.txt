@@ -1,4 +1,4 @@
-CREATE TABLE Magnus.dbo.Creature_Creature (    -- описание существа на карте
+CREATE TABLE Magnus.dbo.Creature_Creature (    -- описание существа на карте  -- заполнено
 
     id BIGINT PRIMARY KEY,                           -- айди существа 
     owner_id BIGINT NOT NULL,                        -- айди владельца ( -1- агрессивный моб, -2 - не агрессивный моб)
@@ -9,7 +9,7 @@ CREATE TABLE Magnus.dbo.Creature_Creature (    -- описание существа на карте
     zodiak_id VARCHAR (200) NOT NULL                 -- айди знака зодиака (если его нет то -1)
 )
 
-CREATE TABLE Magnus.dbo.Creature_CreatureState (    -- описание состояния существа
+CREATE TABLE Magnus.dbo.Creature_CreatureState (    -- описание состояния существа  -- заполнено
 
     id BIGINT PRIMARY KEY,                            -- айди
     level BIGINT NOT NULL,                            -- уровень существа
