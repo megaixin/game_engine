@@ -1,0 +1,26 @@
+import java.awt.BorderLayout;
+import java.awt.Dimension;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+
+public class myPanel{
+  
+          JFrame frame = new JFrame(«Тест»);
+          frame.setSize(100,100);
+       
+          JPanel panel = new JPanel();
+          panel.setSize(90,90);
+
+          JButton button = new JButton("Пуск");
+          button = setSize(30,30);
+
+          frame setVisible (true);
+          panel = setVisible (true);
+          button setVisible (true);
+
+          frame.add(panel);
+          panel.add(button) 
+}

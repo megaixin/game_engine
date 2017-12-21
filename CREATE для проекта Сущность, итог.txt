@@ -87,7 +87,7 @@ CREATE TABLE Magnus.dbo.Creature_LeveledItemSet (  -- описание уровневого набора
     id_item BIGINT NOT NULL                          -- айди инвентаря, вещь из инвентаря
 )
 
-CREATE TABLE Magnus.dbo.Creature_StatesAndPerksBonus (    -- описание статов и перков
+CREATE TABLE Magnus.dbo.Creature_StatesAndPerksBonus (    -- описание статов и перков   
 
     race_or_class_id BIGINT NOT NULL,                -- айди бонуса
     state_or_perk_id BIGINT NOT NULL,                -- айди стата или перка
@@ -98,7 +98,7 @@ CREATE TABLE Magnus.dbo.Creature_Map ( -- описание карты
 
   point BIGINT NOT NULL,                             -- точка
   change_type VARCHAR (500) NOT NULL,                -- местность, поворот или встреча с отрядом
-  change_param VARCHAR (500) NOT NULL,               -- конкретная местность, направление поворота и что за отрял
+  change_param VARCHAR (500) NOT NULL,               -- конкретная местность, направление поворота и что за отряд
   help_string VARCHAR (MAX)                          -- вспомагательная строка
 )
 
