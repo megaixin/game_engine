@@ -69,7 +69,7 @@ CREATE TABLE Magnus.dbo.Creature_Zodiak (  -- описание зодиака  --заполнено
 )
 
 
-CREATE TABLE Magnus.dbo.Creature_Inventory (   -- описание инвентаря 
+CREATE TABLE Magnus.dbo.Creature_Inventory (   -- описание инвентаря   --заполнено
     
     creature_id BIGINT NOT NULL,                     -- айди того у кого инвентарь
     item_id BIGINT NOT NULL,                         -- айди вещи входящей в инвентарь
