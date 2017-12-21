@@ -79,7 +79,7 @@ CREATE TABLE Magnus.dbo.Creature_Inventory (   -- описание инвентаря   --заполне
     count BIGINT NOT NULL                            -- к-во вещей 
 )
 
-CREATE TABLE Magnus.dbo.Creature_LeveledItemSet (  -- описание уровневого набора
+CREATE TABLE Magnus.dbo.Creature_LeveledItemSet (  -- описание уровневого набора   -- заполнено
 
     id BIGINT NOT NULL,                              -- айди набора
     first_level BIGINT NOT NULL,                     -- начальный уровень
@@ -94,7 +94,7 @@ CREATE TABLE Magnus.dbo.Creature_StatesAndPerksBonus (    -- описание статов и п
     bonus BIGINT NOT NULL                            -- бонус
 )
 
-CREATE TABLE Magnus.dbo.Creature_Map ( -- описание карты
+CREATE TABLE Magnus.dbo.Creature_Map ( -- описание карты  
 
   point BIGINT NOT NULL,                             -- точка
   change_type VARCHAR (500) NOT NULL,                -- местность, поворот или встреча с отрядом
