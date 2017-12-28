@@ -2,3 +2,41 @@
 Ќе просто или переменна€, или число, а даже вот вот так вот:
 
 g.drawLine(  21, sideDist/2, atopDist, atopDist + 15);
+
+
+// кажда€ строка кода вызова - это точка. точку дают два числа: позици€ от верха до низа и сбоку влево или вправо
+// g - это холст, то на чем мы делаем отметку точек. перва€ пара чисел - от, 2-€ пара числе - до
+
+//в чем хитрость аргумента Graphics g?
+//один вызов метода через пейнт рисует одну-единственную линию на панели
+//разберем еще раз где что рисветс€
+
+
+//описание координат на английском.
+
+Draws a line, using the current color, 
+between the points (x1, y1) and (x2, y2) in this graphics 
+context's coordinate system.
+Parameters:
+x1 the first point's x coordinate.
+y1 the first point's y coordinate.
+x2 the second point's x coordinate.
+y2 the second point's y coordinate.
+
+
+
+
+// просто вариант кода.
+
+//вызов метода
+
+toDrawLine (g, 5, 5);
+
+
+//дравћайЋайн (графикс жы, инт топ, инт лефт)
+
+  public void toDrawLine(Graphics g, int top, int left){
+
+	  g.drawLine(5, top, 5, left)
+
+}
