@@ -18,11 +18,11 @@ Draws a line, using the current color,
 between the points (x1, y1) and (x2, y2) in this graphics 
 context's coordinate system.
 Parameters:
+
 x1 the first point's x coordinate.
 y1 the first point's y coordinate.
 x2 the second point's x coordinate.
 y2 the second point's y coordinate.
-
 
 
 
@@ -32,7 +32,6 @@ y2 the second point's y coordinate.
 
 toDrawLine (g, 5, 5);
 
-
 //дравћайЋайн (графикс жы, инт топ, инт лефт)
 
   public void toDrawLine(Graphics g, int top, int left){
@@ -40,3 +39,100 @@ toDrawLine (g, 5, 5);
 	  g.drawLine(5, top, 5, left)
 
 }
+
+//разбор координат на примере.
+
+    // 1(є1) - точка-дистанци€  слева направо, от кра€ панели (см. доску); 
+    //(є2)(atopDist) -  сверху вниз рассто€ние от кра€ панели (см. доску);
+    //(є3) - длинна линии от точки є1-є2 вниз по панели (см. доску);
+    //(є4)(sideDist) - точка-дистанци€ слева-направо от кра панели в которую упираетс€ нижн€€ точка линии (см.доску)
+
+
+
+
+	  
+    g.drawLine(10, 10, inX, inY);
+    g.drawLine(10, 10, 10, 30);
+    g.drawLine(30, 10, 30, 30);
+    g.drawLine(10, 30, 30, 30);
+    
+    g.drawLine(50, 20, 70, 20);
+    g.drawLine(70, 20, 70, 40);
+    g.drawLine(70, 40, 50, 40);
+    g.drawLine(50, 40, 50, 20);
+    
+    g.drawLine(100, 60, 140, 60);
+    g.drawLine(140, 60, 140, 100);
+    g.drawLine(140, 100, 100, 100);
+    g.drawLine(100, 100, 100, 60);
+
+	    g.drawLine(inX, inY, inX+30, inY);//верх, слева направо
+	    g.drawLine(inX+30, inY, inX+30, inY+30);//права€ сторона, сверху вниз
+	    g.drawLine(inX+30, inY+30, inX, inY+30);//низ, справа налево
+	    g.drawLine(inX, inY+30, inX, inY);//лева€ сторона, снизу вверх
+    
+
+
+
+_________________________________________ 
+
+
+drawCage( Graphics g, int x, int y){
+
+    //рисуем внешний квадрат
+    //четыре дравлайна
+
+    //рисуем внутренний квадрат
+    //еще четыре дравлайна
+
+    //рисуем ромб
+    //и еще четыре дравлайна
+}
+предположим, что та точка, от которой мы рисуем картинку - это верхн€€ лева€ точка моей картинки.
+
+нам надо нарисовать линию от нее вправо. 
+дравЋайн (х, у, х + 20, у)
+
+нам надо нарисовать линию от нее вниз
+дравЋайн х, у, х,у + 20
+
+
+и рисуем сразу стороны внутреннего квадрата
+дравлайн х+2, у+2, х+18, у + 2
+
+дравЋайн х+2, у + 2, х + 2, у + 18
+
+
+и полирнем одной стороной ромба
+
+дравЋайн х, у + 10, х + 10, у
+
+__________________________________________
+
+
+
+
+старый версус
+ public void toDrawQuadrate(Graphics g, int inX, int inY){
+
+	    g.drawLine(inX, inY, inX+20, inY);//верх, слева направо
+	    g.drawLine(inX+20, inY, inX+20, inY+20);//права€ сторона, сверху вниз
+	    g.drawLine(inX+20, inY+20, inX, inY+20);//низ, справа налево
+	    g.drawLine(inX, inY+20, inX, inY);//лева€ сторона, снизу вверх  
+   
+	    g.drawLine(inX, inY, inX+20, inY);//верх, слева направо
+	    g.drawLine(inX+20, inY, inX+20, inY+20);//права€ сторона, сверху вниз
+	    g.drawLine(inX+20, inY+20, inX, inY+20);//низ, справа налево
+	    g.drawLine(inX, inY+20, inX, inY);//лева€ сторона, снизу вверх  
+   
+  
+  }
+
+  public void toDrawRomb(Graphics g, int inX, int inY){
+	  
+	         g.drawLine(inX, inY, inX+15, inY+15);//вершина, бокова€ лини€ вправо и вниз
+		 g.drawLine(inX+15, inY+15, inX, inY+30);//острый угол, право и вниз  
+		 g.drawLine(inX, inY+30, inX-15, inY+15);//лини€ бокова€ вверх, влево
+		 g.drawLine(inX-15, inY+15, inX, inY);//острый угол, вверх влево
+		
+  }

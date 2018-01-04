@@ -6,27 +6,52 @@ public class myDrawingPanel extends JPanel{
   @Override
   public void paint(Graphics g){
     super.paint(g);
-     toDrawQuadrate(g, 40, 20);
-    //toDrawQuadrate(g, 35, 21);
-    //toDrawQuadrate(g, 3, 20);
-  
+    toDrawQuadrate(g, 35, 30);
+    toDrawChest(g, 80, 40);
   }
 
-   
- //нарисовать вадрат (инт рассто€ние—верху, инт рассто€ние—боку){
-  public void toDrawQuadrate (Graphics g, int atopDist, int sideDist){
+  public void toDrawQuadrate(Graphics g, int inX, int inY){
 
-    g.drawLine(20, atopDist, 20, sideDist);// 20, 40, 20, 20
-    // 1(є1) - точка-дистанци€  слева направо, от кра€ панели (см. доску); 
-    //(є2)(atopDist) -  сверху вниз рассто€ние от кра€ панели (см. доску);
-    //(є3) - длинна линии от точки є1-є2 вниз по панели (см. доску);
-    //(є4)(sideDist) - точка-дистанци€ слева-направо от кра панели в которую упираетс€ нижн€€ точка линии (см.доску)
-    
-    
-    //g.drawLine(atopDist, sideDist, atopDist, sideDist);
-    //g.drawLine(10, atopDist, 15, sideDist);
-   }
+	    g.drawLine(inX, inY, inX+30, inY);
+	    g.drawLine(inX+30, inY, inX+30, inY+30);
+	    g.drawLine(inX+30, inY+30, inX, inY+30);
+	    g.drawLine(inX, inY+30, inX, inY);  
+   
+	    g.drawLine(inX+2, inY+2, inX+28, inY+2);
+	    g.drawLine(inX+28, inY+2, inX+28, inY+28);
+	    g.drawLine(inX+28, inY+28, inX+2, inY+28);
+	    g.drawLine(inX+2, inY+2, inX+2, inY+28); 
+	    
+	    g.drawLine(inX, inY+15, inX+15, inY);
+		g.drawLine(inX+15, inY, inX+30, inY+15);  
+		g.drawLine(inX+30, inY+15, inX+15, inY+30);
+		g.drawLine(inX+15, inY+30, inX, inY+15);
+  }
+
+  public void toDrawChest(Graphics g, int inX, int inY){
+	  g.drawLine(inX, inY, inX+20, inY);
+	  g.drawLine(inX+20, inY, inX+20, inY+16);
+	  g.drawLine(inX+20, inY+15, inX, inY+15);
+	  g.drawLine(inX, inY+16, inX, inY);
+	  
+	  g.drawLine(inX+2, inY+2, inX+18, inY+2);
+	  g.drawLine(inX+18, inY+2, inX+18, inY+13);
+	  g.drawLine(inX+18, inY+13, inX+2, inY+13);
+	  g.drawLine(inX+2, inY+13, inX+2, inY+2);
+	  
+	  g.drawLine(inX, inY, inX+3, inY-3);
+	  g.drawLine(inX+3, inY-3, inX+17, inY-3);
+	  g.drawLine(inX+17, inY-3, inX+20, inY);
+	  g.drawOval(inX+8, inY+7, inX-76, inY-38);
+	  
+}
+
+
+  public void toDrawDoor(Graphics g, int inX, int inY){
+	  //g.drawLine(inX, inY, inX+5, inY-5);
+	  //g.drawLine(inX, inY, inX+5, inY-5);
+
+  }
+
 
 }	
-
-//описание первой линии завершено.
