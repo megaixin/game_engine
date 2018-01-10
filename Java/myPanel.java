@@ -38,14 +38,14 @@ public class myPanel {
 		ArrayList<ArrayList<ArrayList<String>>> myRes = SqlExecutor.executeQuery(
 				"SELECT name FROM Magnus.dbo.Creature_Creature");
 		
-		SqlExecutor.showResult(myRes);
+		//SqlExecutor.showResult(myRes);
 
-		System.out.println("");
-		System.out.println("");
-		System.out.println("");
+		//System.out.println("");
+		//System.out.println("");
+		//System.out.println("");
 		
 		
-		System.out.println(myRes.get(0).get(2).get(0));
+		//System.out.println(myRes.get(0).get(2).get(0));
 		
 	}
 }

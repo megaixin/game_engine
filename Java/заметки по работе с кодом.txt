@@ -136,3 +136,64 @@ __________________________________________
 		 g.drawLine(inX-15, inY+15, inX, inY);//острый угол, вверх влево
 		
   }
+
+
+
+РОМБИК
+	   g.drawLine(inX, inY+15, inX+15, inY);
+	   g.drawLine(inX+15, inY, inX+30, inY+15);  
+	   g.drawLine(inX+30, inY+15, inX+15, inY+30);
+	   g.drawLine(inX+15, inY+30, inX, inY+15);
+
+
+
+
+ for (int x = 0; x < 300; x += 30){
+        for (int y = 0; y < 300; y += 30){
+        	
+        	toDrawQuadrate(g, x, y);
+        }
+
+
+
+public void toDrawEnemy(Graphics g, int inX, int inY){//рисуем вражеский отряд (или просто отряд)
+	
+	  g.drawOval(inX, inY, 4, 4);
+	 
+	  g.drawLine(inX+4, inY+4, inX+10, inY+4);
+	  //g.drawLine(inX+10, inY, inX+4, inY+10);
+	  //g.drawLine(inX+4, inY+10, inX+10, inY+10);
+	  
+	  //g.drawLine(inX, inY, inX-3, inY+5);
+	  //g.drawLine(inX, inY, inX-3, inY+5);
+	  //g.drawLine(inX+10, inY, inX+11, inY+3);
+	  //g.drawLine(inX+11, inY+3, inX+17, inY-8);
+	  //g.drawLine(inX+12, inY-2, inX+15, inY+1);
+	 
+	}
+
+  public void toDrawDoor(Graphics g, int inX, int inY){//рисуем дверь
+	  g.drawLine(inX, inY, inX+19, inY);
+	  g.drawLine(inX+19, inY, inX+19, inY+23);
+	  g.drawLine(inX+19, inY+23, inX, inY+23);
+	  g.drawLine(inX, inY+23, inX, inY);
+	  g.drawLine(inX+2, inY+23, inX+2, inY);
+	  g.drawLine(inX+15, inY+13, inX+15, inY+10);
+  }
+  public void toDrawChest(Graphics g, int inX, int inY){//рисуем сундук
+	  
+	  g.drawLine(inX+3, inY-3, inX+17, inY-3);
+	  g.drawLine(inX, inY, inX+3, inY-3);
+	  g.drawLine(inX+17, inY-3, inX+20, inY);
+	 
+	  g.drawLine(inX, inY, inX+20, inY);
+	  g.drawLine(inX+20, inY, inX+20, inY+16);
+	  g.drawLine(inX+20, inY+15, inX, inY+15);
+	  g.drawLine(inX, inY+16, inX, inY);
+	  
+	  g.drawLine(inX+2, inY+2, inX+18, inY+2);
+	  g.drawLine(inX+18, inY+2, inX+18, inY+13);
+	  g.drawLine(inX+18, inY+13, inX+2, inY+13);
+	  g.drawLine(inX+2, inY+13, inX+2, inY+2);
+	  
+}
