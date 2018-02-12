@@ -64,11 +64,8 @@ public class myDrawingPanel extends JPanel{
 		
 		ArrayList<ArrayList<ArrayList<String>>> myRes = 
 				SqlExecutor.executeQuery(
-						"SELECT * FROM Magnus.dbo.Creature_Map WHERE change_type = 'Ќаправление' ORDER BY point ASC");						 
-				SqlExecutor.executeQuery(
-				"SELECT * FROM Magnus.dbo.Creature_Map WHERE change_param = 'Ќаправление' ORDER BY point ASC");
-
-		//System.out.println ("¬ызываетс€ метод repaint - " + new java.util.Date().toString()   );
+			            "SELECT * FROM Magnus.dbo.Creature_Map WHERE change_type = 'Ќаправление' ORDER BY point ASC         "
+			            + "     SELECT * FROM Magnus.dbo.Creature_Map WHERE change_param = 'ћестность' ORDER BY point ASC");
 	   
 		for (int i = 0; i < 28 ; i++){ //дл€ каждого  числа от 0 до 28
 			//рисуем текущую точку 
@@ -78,7 +75,7 @@ public class myDrawingPanel extends JPanel{
 			if ( i ==   Integer.valueOf(   myRes.get(0).get(2).get(0)    )    ){ //начинаем с 2 потому что 0 и 1 - название данных				
 				//вычисл€ем текущее направление
 				String nowTurn =  myRes.get(0).get(2).get(2);
-				String nowParam = myRes.get(1).get(2).get(2);
+				String nowParam = myRes.get(0).get(2).get(2);
 				
 				//мен€ем смещение на то, что есть	
 				if (  nowTurn.equals("¬верх") ){					
@@ -98,10 +95,14 @@ public class myDrawingPanel extends JPanel{
 					nowDiff.x = 1; 
 					nowDiff.y = 0; 
 				}	
-				if (  nowParam.equals("Ћес") ){				
-					g.setColor(Color.GREEN);
-				}
+			
+			
 				
+			if (  nowPoint.equals("Ћес") ){				
+				g.setColor(Color.green);
+					
+					 
+				}
 				//удал€ем нахой строку, но чтоб не вафлилось при пустом списке, всегда оставл€ем последний элемент
 				//это костыль, надо бы переработать, чтоб покрасивее
 				if (myRes.get(0).size() > 3){
@@ -114,16 +115,3 @@ public class myDrawingPanel extends JPanel{
 		}		
 	}
 }
-
-//написать логику дл€ распознавани местности по типу местности и закрашивать соответствующую местность определенным цветом.
-// рисуем текущую точку
-//если точка имеет тип "лес" - клетку рисуем зеленым цветом
-//если точка имеет тип "вода" - клетку окрашиваем в синий.
-
-//
-
-
-
-
-
-

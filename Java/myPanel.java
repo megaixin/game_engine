@@ -1,8 +1,11 @@
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 public class myPanel {
@@ -26,8 +29,18 @@ public class myPanel {
 		myDrawingPanel playWindow = new myDrawingPanel();
 		playWindow.setBounds (24, 70, 300, 300);
 		playWindow.setBackground(java.awt.Color.LIGHT_GRAY);
-          
-		frame.add(panel);
+		
+		ActionListener myListener = new TestActionListener();
+		
+		button.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("Проверка реакции кнопки."); 
+            	
+            }
+       });
+		
+		button.addActionListener(myListener);
+        frame.add(panel);
 		panel.add(button);
 		panel.add(playWindow);
     
@@ -35,7 +48,9 @@ public class myPanel {
 		panel.setVisible(true);
 		button.setVisible(true);
 		
-	
+		}
 	}
-}
+
+
+
 
